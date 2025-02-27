@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Google検索強化拡張",
+  "version": "1.0",
+  "description": "検索キーワードから質問を生成し、検索結果の評価点を表示します。",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.google.com/*",
+    "https://google.com/*",
+    "https://gsiai.seigo2016.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/search*"],
+      "js": ["content_script.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
